@@ -23,3 +23,5 @@ alias cl="clear; ls"
 alias cla="clear; ls -lah"
 
 alias n="nvim"
+
+alias restart="shutdown -r now"
