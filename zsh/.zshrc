@@ -17,6 +17,8 @@ source $ZSH/oh-my-zsh.sh
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
+DEFAULT_USER="vincent"
+
 ############# ALIASES ##################
 
 alias cl="clear; ls"

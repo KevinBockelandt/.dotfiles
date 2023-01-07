@@ -3,16 +3,13 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   -- Color scheme
-  use 'chriskempson/base16-vim'
+  use 'RRethy/nvim-base16'
 
   -- Lua utilities. Needed by some plugins
   use 'nvim-lua/plenary.nvim'
 
   -- Status bar
-  use {
-    'nvim-lualine/lualine.nvim',
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-  }
+  use 'nvim-lualine/lualine.nvim'
 
   -- Jump anywhere
   use {
