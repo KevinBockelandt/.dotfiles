@@ -49,4 +49,19 @@ return require('packer').startup(function(use)
       ts_update()
     end
   }
+
+  -- Auto-complete
+  use {
+    'hrsh7th/nvim-cmp',
+    requires = {
+      'hrsh7th/cmp-buffer',
+      'saadparwaiz1/cmp_luasnip'
+    }
+  }
+
+  -- Snippet engine
+  use {
+    'L3MON4D3/LuaSnip',
+    after = 'nvim-cmp'
+  }
 end)
