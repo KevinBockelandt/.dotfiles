@@ -38,6 +38,9 @@ return require('packer').startup(function(use)
     }
   }
 
+  -- File browser extension for Telescope
+  use 'nvim-telescope/telescope-file-browser.nvim'
+
   -- Tree sitter
   use {
     'nvim-treesitter/nvim-treesitter',
