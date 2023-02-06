@@ -17,6 +17,9 @@ return require('packer').startup(function(use)
     branch = 'v2'
   }
 
+  -- Better matches presentation
+  use 'kevinhwang91/nvim-hlslens'
+
   -- Focus text on center of window
   use 'folke/zen-mode.nvim'
 
