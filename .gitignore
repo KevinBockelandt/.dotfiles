@@ -1,3 +1,7 @@
-pulse/
-ibus/
 abrt/
+dconf/
+evolution/
+ibus/
+pulse/
+zsh/.zcompdump*
+.gsd-keyboard.settings-ported

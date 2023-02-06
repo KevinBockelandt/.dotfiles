@@ -27,3 +27,6 @@ alias cla="clear; ls -lah"
 alias n="nvim"
 
 alias restart="shutdown -r now"
+
+alias nrb="npm run build"
+alias nrl="npm run lint"
