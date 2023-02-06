@@ -67,4 +67,13 @@ return require('packer').startup(function(use)
     'L3MON4D3/LuaSnip',
     after = 'nvim-cmp'
   }
+
+  -- Neorg. Note writing among other things
+  use {
+    'nvim-neorg/neorg',
+    config = function()
+    end,
+    run = ':Neorg sync-parsers',
+    requires = 'nvim-lua/plenary.nvim',
+  }
 end)
