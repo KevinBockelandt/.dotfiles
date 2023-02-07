@@ -11,6 +11,16 @@ return require('packer').startup(function(use)
   -- Status bar
   use 'nvim-lualine/lualine.nvim'
 
+  -- Cheatsheet system
+  use {
+    'sudormrfbin/cheatsheet.nvim',
+    requires = {
+      {'nvim-telescope/telescope.nvim'},
+      {'nvim-lua/popup.nvim'},
+      {'nvim-lua/plenary.nvim'},
+    }
+  }
+
   -- Jump anywhere
   use {
     'phaazon/hop.nvim',

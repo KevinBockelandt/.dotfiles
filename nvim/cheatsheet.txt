@@ -1,0 +1,8 @@
+## std-normal
+Jump back previous location | <C-o>
+Jump forwared next location | <C-i>
+Jump matching delimiter | %
+Search word under cursor forward | *
+Search word under cursor backward | #
+Search word under cursor forward (partial match) | g*
+Search word under cursor backward (partial match) | g#
