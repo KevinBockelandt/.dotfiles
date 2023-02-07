@@ -71,8 +71,6 @@ return require('packer').startup(function(use)
   -- Neorg. Note writing among other things
   use {
     'nvim-neorg/neorg',
-    config = function()
-    end,
     run = ':Neorg sync-parsers',
     requires = 'nvim-lua/plenary.nvim',
   }

@@ -1,11 +1,20 @@
 require('neorg').setup {
   load = {
     ['core.defaults'] = {},
+    ['core.norg.concealer'] = {
+      config = {
+        icon_preset= 'diamond',
+      },
+    },
+    ['core.integrations.treesitter'] = {},
     ['core.norg.dirman'] = { -- manages Neorg workspaces
       config = {
         workspaces = {
-          notes = '~/notes',
+          notes = '~/Dropbox/notes/neorg',
         },
+        index = 'index.norg',
+        default_workspace = 'notes',
+        open_last_workspace = true,
       },
     },
   },
