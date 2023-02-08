@@ -19,3 +19,5 @@ require('neorg').setup {
     },
   },
 }
+
+vim.cmd('nnoremap <leader>a :Neorg toggle-concealer<CR>')

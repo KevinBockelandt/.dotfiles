@@ -5,6 +5,9 @@ return require('packer').startup(function(use)
   -- Color scheme
   use 'RRethy/nvim-base16'
 
+  -- Custom icons
+  use 'nvim-tree/nvim-web-devicons'
+
   -- Lua utilities. Needed by some plugins
   use 'nvim-lua/plenary.nvim'
 
