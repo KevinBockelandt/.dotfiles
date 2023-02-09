@@ -25,6 +25,7 @@ alias cl="clear; ls"
 alias cla="clear; ls -lah"
 
 alias n="nvim"
+alias ni="nvim ~/Dropbox/notes/neorg/index.norg"
 
 alias restart="shutdown -r now"
 
