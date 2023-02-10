@@ -3,7 +3,7 @@ local cmp = require('cmp')
 cmp.setup({
   snippet = {
     expand = function(args)
-      require('luasnip').lsp_expand(args.body)
+      require('vsnip#anonymous').lsp_expand(args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert({
@@ -11,7 +11,7 @@ cmp.setup({
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   }),
   sources = cmp.config.sources({
-    { name = 'luasnip' }, -- For luasnip users.
+    { name = 'vsnip' },
   }, {
     { name = 'buffer' },
   })

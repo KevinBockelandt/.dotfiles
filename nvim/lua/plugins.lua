@@ -1,90 +1,72 @@
-return require('packer').startup(function(use)
-  -- Package manager
-  use 'wbthomason/packer.nvim'
+-- necessary code to bootstrap "lazy"
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
+if not vim.loop.fs_stat(lazypath) then
+  vim.fn.system({
+    "git",
+    "clone",
+    "--filter=blob:none",
+    "https://github.com/folke/lazy.nvim.git",
+    "--branch=stable", -- latest stable release
+    lazypath,
+  })
+end
+vim.opt.rtp:prepend(lazypath)
+
+
+require('lazy').setup({
   -- Color scheme
-  use 'RRethy/nvim-base16'
-
+  {
+    'RRethy/nvim-base16',
+    lazy = false,
+  },
   -- Custom icons
-  use 'nvim-tree/nvim-web-devicons'
-
+  'nvim-tree/nvim-web-devicons',
   -- Lua utilities. Needed by some plugins
-  use 'nvim-lua/plenary.nvim'
-
+  'nvim-lua/plenary.nvim',
   -- Status bar
-  use 'nvim-lualine/lualine.nvim'
-
+  'nvim-lualine/lualine.nvim',
   -- Cheatsheet system
-  use {
-    'sudormrfbin/cheatsheet.nvim',
-    requires = {
-      {'nvim-telescope/telescope.nvim'},
-      {'nvim-lua/popup.nvim'},
-      {'nvim-lua/plenary.nvim'},
-    }
-  }
-
+  'sudormrfbin/cheatsheet.nvim',
+  -- Needed by cheatsheet
+  'nvim-lua/popup.nvim',
   -- Jump anywhere
-  use {
+  {
     'phaazon/hop.nvim',
     branch = 'v2'
-  }
-
+  },
   -- Better matches presentation
-  use 'kevinhwang91/nvim-hlslens'
-
+  'kevinhwang91/nvim-hlslens',
   -- Focus text on center of window
-  use 'folke/zen-mode.nvim'
-
+  'folke/zen-mode.nvim',
   -- Comment code
-  use 'preservim/nerdcommenter'
-
+  'preservim/nerdcommenter',
   -- C port of fzf
-  use {
+  {
     'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make'
-  }
-
+    build = 'make'
+  },
   -- Fuzzy finder over lists
-  use {
+  {
     'nvim-telescope/telescope.nvim',
-    tag = '0.1.x',
-    requires = {
-      { 'nvim-lua/plenary.nvim' }
-    }
-  }
-
+    branch = '0.1.x',
+  },
   -- File browser extension for Telescope
-  use 'nvim-telescope/telescope-file-browser.nvim'
-
+  'nvim-telescope/telescope-file-browser.nvim',
   -- Tree sitter
-  use {
+  {
     'nvim-treesitter/nvim-treesitter',
-    run = function()
+    build = function()
       local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
       ts_update()
     end
-  }
-
-  -- Auto-complete
-  use {
-    'hrsh7th/nvim-cmp',
-    requires = {
-      'hrsh7th/cmp-buffer',
-      'saadparwaiz1/cmp_luasnip'
-    }
-  }
-
+  },
   -- Snippet engine
-  use {
-    'L3MON4D3/LuaSnip',
-    after = 'nvim-cmp'
-  }
-
+  'hrsh7th/vim-vsnip',
+  -- Source for autocomplete
+  'hrsh7th/cmp-buffer',
+  -- Auto-complete
+  'hrsh7th/nvim-cmp',
   -- Neorg. Note writing among other things
-  use {
-    'nvim-neorg/neorg',
-    run = ':Neorg sync-parsers',
-    requires = 'nvim-lua/plenary.nvim',
-  }
-end)
+  'nvim-neorg/neorg',
+})
