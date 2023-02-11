@@ -35,8 +35,6 @@ require('lazy').setup({
     'phaazon/hop.nvim',
     branch = 'v2'
   },
-  -- Better matches presentation
-  'kevinhwang91/nvim-hlslens',
   -- Focus text on center of window
   'folke/zen-mode.nvim',
   -- Comment code
