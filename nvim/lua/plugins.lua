@@ -66,5 +66,10 @@ require('lazy').setup({
   -- Auto-complete
   'hrsh7th/nvim-cmp',
   -- Neorg. Note writing among other things
-  'nvim-neorg/neorg',
+  {
+    'nvim-neorg/neorg',
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
 })

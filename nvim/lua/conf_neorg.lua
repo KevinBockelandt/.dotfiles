@@ -7,6 +7,11 @@ require('neorg').setup {
       },
     },
     ['core.integrations.treesitter'] = {},
+    ['core.export'] = {
+      config = {
+        export_dir = '~/',
+      },
+    },
     ['core.norg.dirman'] = { -- manages Neorg workspaces
       config = {
         workspaces = {
